@@ -1,7 +1,6 @@
 import urllib.parse
 from robobrowser import RoboBrowser
 
-
 BASE_URL = 'http://www.narlivs.se'
 
 
@@ -25,7 +24,7 @@ class Client(object):
         return self.browser.parsed
 
     def get_data(self, path, retry=True):
-        """Loads the given path making sure that the request is authenticated"""
+        """Loads the given path making sure the request is authenticated"""
         response = str(self._open(path))
         if 'Logga ut' not in response:
             if retry:

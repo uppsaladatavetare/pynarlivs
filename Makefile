@@ -7,7 +7,7 @@ clean:
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -fr {} +
 
-release: clean
+release: dist clean
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 
@@ -18,6 +18,12 @@ dist: clean
 
 install: clean
 	python setup.py install
+
+erase_cassettes:
+	rm -fr tests/cassettes/
+
+test:
+	python setup.py test
 
 lint:
 	flake8 narlivs/

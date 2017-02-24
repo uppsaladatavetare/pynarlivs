@@ -18,7 +18,7 @@ setup(
     author='Krzysztof Jagiello',
     author_email='me@kjagiello.com',
     url='https://github.com/uppsaladatavetare/pynarlivs',
-    version=__import__('narlivs').__version__,
+    version='0.9.0',
     packages=find_packages(),
     include_package_data=True,
     license='MIT license',
@@ -26,5 +26,10 @@ setup(
     install_requires=[
         'robobrowser==0.5.3',
         'lxml==3.6.4',
+    ],
+    tests_require=[
+        'vcrpy==1.10.4',
+        'vcrpy-unittest==0.1.6',
+        'coverage==4.3.4',
     ],
 )

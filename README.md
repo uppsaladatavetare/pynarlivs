@@ -1,12 +1,18 @@
 # pynarlivs
 
 ![https://badge.fury.io/py/pynarlivs](http://badge.fury.io/py/pynarlivs.png)
+![https://travis-ci.org/uppsaladatavetare/pynarlivs](https://travis-ci.org/uppsaladatavetare/pynarlivs.png)
+![https://codecov.io/gh/uppsaladatavetare/pynarlivs/](https://codecov.io/gh/uppsaladatavetare/pynarlivs/coverage.png)
 
 Ever wanted to interact with [Närlivs](http://www.narlivs.se) using an API?
 Yep, there is none. We are here to make your life easier! This library aims
 to provide a Pythonic interface for some basic functionalities on Narlivs,
 i.e. retrieving product information (or, in future, automating the order
 process).
+
+## Requirements
+
+- Python 3.4+
 
 ## What do we use pynarlivs for?
 
