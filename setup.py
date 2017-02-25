@@ -23,12 +23,13 @@ setup(
     include_package_data=True,
     license='MIT license',
     zip_safe=False,
+    test_suite='tests',
     install_requires=[
         'robobrowser==0.5.3',
         'lxml==3.6.4',
     ],
     tests_require=[
-        'vcrpy==1.10.4',
+        'vcrpy==1.10.5',
         'vcrpy-unittest==0.1.6',
         'coverage==4.3.4',
     ],

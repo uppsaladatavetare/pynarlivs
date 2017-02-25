@@ -1,5 +1,6 @@
 from .Client import Client
 from .Product import Product
+from .Cart import Cart
 
 
 class Narlivs(object):
@@ -8,6 +9,9 @@ class Narlivs(object):
 
     def get_product(self, **kwargs):
         return Product(self.client, **kwargs)
+
+    def get_cart(self):
+        return Cart(self.client)
 
 
 if __name__ == '__main__':

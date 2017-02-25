@@ -22,8 +22,17 @@ install: clean
 erase_cassettes:
 	rm -fr tests/cassettes/
 
-test:
+scrub_cassettes:
+	cd bin && ./scrub_cassettes.sh
+
+run_tests:
 	python setup.py test
 
+test: run_tests scrub_cassettes
+
 lint:
-	flake8 narlivs/
+	flake8 narlivs/ tests/
+
+coverage:
+	coverage run setup.py test
+	coverage report -m
