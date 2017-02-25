@@ -16,8 +16,5 @@ class NarlivsTestCase(VCRTestCase):
             'LoginForm_Login',
             'LoginForm_Password'
         ]
-        new_kwargs['filter_headers'] = [
-            'Cookie',
-            'Set-Cookie'
-        ]
+        new_kwargs['filter_headers'] = ['Cookie']
         return new_kwargs

@@ -2,8 +2,7 @@ import decimal
 from .Base import BaseAPI, NarlivsException
 from .Client import build_path
 
-SEARCH_URL = ('/is-bin/INTERSHOP.enfinity/WFS/Axfood-NWP2-Site/sv_SE/-'
-              '/SEK/ViewParametricSearch-SimpleOfferSearch?searchTerm='
+SEARCH_URL = ('ViewParametricSearch-SimpleOfferSearch?searchTerm='
               '{search_term}')
 
 
@@ -20,7 +19,7 @@ class Product(BaseAPI):
     def retrieve(self, search_term):
         """Retrieves product details for given search term."""
         url = SEARCH_URL.format(search_term=search_term)
-        self.client.get_data(url)
+        self.client.visit(url)
 
         def element(s):
             query = '.productListContainer .productInnerContainer {}'.format
@@ -37,17 +36,19 @@ class Product(BaseAPI):
             return decimal.Decimal(x.split()[0].replace(',', '.'))
 
         thumbnail_url = build_path(element('img')['src'])
+        cart_add_url = element('.addToCartBtn')['data-href']
 
         data = {
             'name': text('.productName'),
             'sku': prop(2),
             'ean': prop(3),
             'price': money(text('tbody .price')),
-            'image': thumbnail_url.replace('thumbnails', 'images')
+            'image': thumbnail_url.replace('thumbnails', 'images'),
+            'cart_add_url': cart_add_url,
         }
 
         # Verify that the retrieved product matches the given EAN or SKU.
-        msg = 'Retrieved product does not match given {} ({} != {})'.format
+        msg = 'Retrieved product does not match given {} ({!r} != {!r})'.format
 
         if self.sku is not None and self.sku != data['sku']:
             raise NarlivsException(msg('SKU', self.sku, data['sku']))
