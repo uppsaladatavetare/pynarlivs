@@ -42,6 +42,7 @@ class Product(BaseAPI):
             'name': text('.productName'),
             'sku': prop(2),
             'ean': prop(3),
+            'units': int(text('tbody .size')[:-3]),
             'price': money(text('tbody .price')),
             'image': thumbnail_url.replace('thumbnails', 'images'),
             'cart_add_url': cart_add_url,

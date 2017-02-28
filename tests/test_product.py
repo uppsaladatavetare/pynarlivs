@@ -9,6 +9,7 @@ class ProductTests(NarlivsTestCase):
         self.assertIsNotNone(data1['price'])
         self.assertIsNotNone(data1['image'])
         self.assertIsNotNone(data1['cart_add_url'])
+        self.assertIsNotNone(data1['units'])
 
         # Make sure that getting the product by SKU
         # produces the same result
