@@ -1,8 +1,8 @@
 # pynarlivs
 
-![https://badge.fury.io/py/pynarlivs](http://badge.fury.io/py/pynarlivs.png)
-![https://travis-ci.org/uppsaladatavetare/pynarlivs](https://travis-ci.org/uppsaladatavetare/pynarlivs.png)
-![https://codecov.io/gh/uppsaladatavetare/pynarlivs/](https://codecov.io/gh/uppsaladatavetare/pynarlivs/coverage.png)
+![https://pypi.python.org/pypi/pynarlivs/](https://img.shields.io/pypi/v/pynarlivs.svg)
+![https://travis-ci.org/uppsaladatavetare/pynarlivs/](https://api.travis-ci.org/uppsaladatavetare/pynarlivs.svg?branch=master)
+![https://codecov.io/gh/uppsaladatavetare/pynarlivs/](https://codecov.io/github/uppsaladatavetare/pynarlivs/coverage.svg?branch=master)
 
 Ever wanted to interact with [Närlivs](http://www.narlivs.se) using an API?
 Yep, there is none. We are here to make your life easier! This library aims
