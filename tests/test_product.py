@@ -12,6 +12,10 @@ class ProductTests(NarlivsTestCase):
         self.assertIsNotNone(data1['units'])
 
         # Make sure that getting the product by SKU
-        # produces the same result
+        # produces the same result...
         data2 = self.narlivs.get_product(sku='100102201').data
         self.assertEqual(data1, data2)
+
+        # ...and that retrieval of non-existent products is handled gracefully
+        data3 = self.narlivs.get_product(sku='123123123').data
+        self.assertIsNone(data3)

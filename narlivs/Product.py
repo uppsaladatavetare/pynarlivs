@@ -35,8 +35,11 @@ class Product(BaseAPI):
             """Convert from Narlivs money format to a decimal."""
             return decimal.Decimal(x.split()[0].replace(',', '.'))
 
-        thumbnail_url = build_path(element('img')['src'])
-        cart_add_url = element('.addToCartBtn')['data-href']
+        try:
+            thumbnail_url = build_path(element('img')['src'])
+            cart_add_url = element('.addToCartBtn')['data-href']
+        except IndexError:
+            return None
 
         data = {
             'name': text('.productName'),
