@@ -26,7 +26,7 @@ setup(
     test_suite='tests',
     install_requires=[
         'robobrowser==0.5.3',
-        'lxml==3.6.4',
+        'lxml==4.6.2',
     ],
     tests_require=[
         'vcrpy==1.10.5',
