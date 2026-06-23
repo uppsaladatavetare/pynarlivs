@@ -29,7 +29,7 @@ setup(
         'lxml==3.6.4',
     ],
     tests_require=[
-        'vcrpy==1.10.5',
+        'vcrpy==8.2.1',
         'vcrpy-unittest==0.1.6',
         'coverage==4.3.4',
     ],
